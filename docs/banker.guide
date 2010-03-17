@@ -1,0 +1,619 @@
+@database banker.guide
+
+@Master banker.texinfo
+
+@Width 72
+
+
+This is the AmigaGuide® file banker.guide, produced by Makeinfo-1.49 from 
+the input file banker.texinfo.
+
+
+@Node Main "banker.guide"
+
+
+
+Welcome to Banker!!!
+**********************
+
+
+
+ @{" Overview " Link "Overview"}                      What is Banker?
+ @{" Banker status " Link "Banker status"}                 The legal status for Banker
+ @{" Installing banker " Link "Installing banker"}             What you must do to install banker
+ @{" The graphic interface " Link "The graphic interface"}         The bases of Amiga's graphic interface
+ @{" Launching banker " Link "Launching banker"}              From Workbench or CLI
+ @{" The main window " Link "The main window"}               How to select your action
+ @{" The list window " Link "The list window"}               Display your account
+ @{" The New Entry window " Link "The New Entry window"}          Enter a new entry
+ @{" The Automatic Entry window " Link "The Automatic Entry window"}    Enter a new automatic entry
+ @{" The configuration file " Link "The configuration file"}        How to customize Banker
+ @{" Notes for 2.1 users " Link "Notes for 2.1 users"}           Special information for 2.1 users
+ @{" Future enhancements " Link "Future enhancements"}           What is planned for the future
+ @{" Index " Link "Index"}                         Index
+
+
+@EndNode
+
+@Node "OVERVIEW" "banker.guide/OVERVIEW"
+@Toc "Main"
+
+Overview
+********
+
+   This manual describes *Banker*.  Banker is a program designed to
+help you keep an accurate track of your bank accounts.  Before going any
+further, if you are reading the file 'banker.doc', I must tell you that
+there is a much more comfortable to read this documentation :  use the
+Amigaguide format.  As you may have noticed, in the same directory is a
+file 'banker.guide'.  If you have an Amigaguide reader (the most
+powerful is Amigaguide but if you don't have it, see your public domain
+library for this, there are plenty of them in there!), you will enjoy
+immensely the ability to browse through this documentation using
+Hypertext...
+
+   Banker's main features include :
+
+  1. Entries can be entered as you choose it.  'Amount' and 'Dates' are
+     the only fields that are obligatory.  You are free to enter the
+     other ones if you wish (see @{"The New Entry Window" Link "The New Entry Window"}).
+
+  2. Three output formats are available :  Display Format, Print Format
+     and Export  Format (see @{"Output Formats" Link "Output Formats"}).  You might want to
+     display on your screen only a limited number of information, but
+     may want to print the database fully (on a 132 columns printer for
+     example) and be able to save your file under another form
+     understandable by another program...
+
+  3. Full 2.0 graphic user interface using MUI, the Magic User Interface
+
+  4. Banker is fully localized (i.e.  can speak several languages :
+     French, English, Italian, Dutch, etc... see @{"Installing Banker" Link "Installing Banker"}).
+
+  5. Maximum use of the 2.0 OS features : IffParse(), ReadArgs(),
+     amigaguide.library, etc...
+
+  6. User-definable autosave. No more data wasted because of an
+     unexpected power loss : Banker will save your file automatically.
+
+
+
+@EndNode
+
+@Node "BANKER STATUS" "banker.guide/BANKER STATUS"
+@Toc "Main"
+
+Banker's legal status
+*********************
+
+   This program is shareware and (C)1992 by Cédric BEUST. You may
+redistribute it freely provided :
+
+  1. No benefits are made on it, and that the price asked doesn't
+     exceed the price of shipping and handling plus the one of the
+     supporting media.
+
+  2. The distribution is given with every single file present and
+     unaltered. See the file Banker/FILES for a list of these files. 
+     My name and copyright notices must remain intact.
+
+  3. If you find this program useful and have been using it for more
+     than a month, you are morally forced (we know what this means...)
+     to send me a reasonable amount of money ($10 seems fine to me, but
+     if you send more you will enter my "privileged users" list).
+     Please send dollars or French francs unless you really can't do
+     otherwise. I can be reached to the following address :
+
+
+   Cédric BEUST
+"Les Ducs de Savoie"
+1, rue Roger Martin du Gard
+06000 NICE
+FRANCE
+email: beust@sa.inria.fr
+
+
+@EndNode
+
+@Node "INSTALLING BANKER" "banker.guide/INSTALLING BANKER"
+@Toc "Main"
+
+Installing Banker
+*****************
+
+   The operations needed to install Banker are very simple :
+
+   * From CLI : Copy the files Banker and Banker.info into your
+     favorite directory, and copy the configuration file in your `s:'
+     directory :
+
+     1> copy Banker <dest>
+     1> copy Banker.info <dest>
+     1> copy s/.bankerconfig s:
+
+   * From Workbench : Simply drag the Banker icon into your favorite
+     directory. For the configuration file, it's hardly trickier :
+
+       1. Select Window/Show all files from the Workbench menu
+
+       2. Open the `s' drawer
+
+       3. Double-click on the file `.bankerconfig' and replace
+          `.bankerconfig' with `copy .bankerconfig S:'
+
+
+@EndNode
+
+@Node "THE GRAPHIC INTERFACE" "banker.guide/THE GRAPHIC INTERFACE"
+@Toc "Main"
+
+The graphic interface
+*********************
+
+   Banker uses MUI, the Magic User Interface by Stefan Stuntz for its
+interface. Thus, you must have the MUI package in order to be able to
+use Banker. It can be retrieved on aminet, or directly from the author
+if you have no net access. Read the file "Readme.mui" for more
+information on MUI.
+
+   All you have to know of *gadtools* and *MUI* in order to use Banker
+is the following :
+
+   * In string gadgets, all the characters are allowed. Hitting
+     *RETURN* will deactivate the string gadgets. Then you can use the
+     shortcuts if any are present (see below)
+
+   * When you are in a string gadget, hit *TAB* to take the cursor to
+     the following string gadget (*Shift-TAB* will take you to the
+     previous one). When you reach the last one in the window, you are
+     taken back to the first (respectively the first to the last).
+
+   * When all the gadgets are deactivated (i.e. the cursor doesn't
+     appear in any string gadgets), you are free to use the mouse or
+     the shortcuts. They are indicated by a word with a letter
+     underlined. You can press the underlined letter to obtain the same
+     result as if you had pressed the gadget with the mouse.
+
+   * In every window, there are shortcuts that are always valid, even
+     though not clearly indicated. These are
+
+        * *ESC* will make the window disappear (same as selecting the
+          gadget *Cancel* (NB : the name will be different if you chose
+          to use another language)
+
+
+@EndNode
+
+@Node "LAUNCHING BANKER" "banker.guide/LAUNCHING BANKER"
+@Toc "Main"
+
+Launching Banker
+****************
+
+   You can execute Banker either from CLI or from the Workbench. You
+have the possibility in either case to give arguments that give Banker
+different directives.
+
+
+ @{" From CLI " Link "From CLI"}          Launching from CLI
+ @{" From Workbench " Link "From Workbench"}    Launching from Workbench
+
+
+@EndNode
+
+@Node "FROM CLI" "banker.guide/FROM CLI"
+@Toc "Launching Banker"
+
+From Cli
+========
+
+   If  you launch Banker with a single quotation mark as argument, you
+will have the following template :
+
+1> banker ?
+Language/K,File/K,OptionsFile/K:
+
+   The meaning of these options is :
+
+   * LANGUAGE :    Specify the language you wish to use, in case it is
+     different from the default locale. Note : this option will only
+     work if you're running Workbench 2.1 or higher (see
+     @{"Notes for 2.1 users" Link "Notes for 2.1 users"}).
+
+   * FILE :    Specify the file you want to load initially in Banker.
+
+   * OPTIONSFILE :    Specify an alternate name for the default
+     configuration file (default is `s:.bankerconfig')
+
+   For example, you might call Banker from CLI with the following
+syntax :
+
+1> banker FILE account.bank LANGUAGE italiano
+
+   or
+
+1> banker OPTIONSFILE CFG:Banker.cfg
+
+@EndNode
+
+@Node "FROM WORKBENCH" "banker.guide/FROM WORKBENCH"
+@Toc "Launching Banker"
+
+From Workbench
+==============
+
+Specifying arguments for Banker in the Workbench is accomplished through
+the `info' file. Click once on the Banker icon in order to activate it
+and then select Icon/Information from the menu (or press Right-Amiga
+I). A list of tooltypes appears. To add one, simply click on *Add* and
+type it in the activated string gadget. To modify an existing one,
+select it and do the same. See your Workbench Manual for more details.
+
+   The tooltypes understood by Banker are the following :
+
+   * LANGUAGE=<name>    Specify the language you wish to use, in case
+     it is different from the default locale. Note : this option will
+     only work if you're running Workbench 2.1 or higher (see
+     @{"Notes for 2.1 users" Link "Notes for 2.1 users"}).
+
+   * FILE=<path>    Specify the file you want to load initially in
+     Banker.
+
+   * OPTIONSFILE=<path>    Specify an alternate name for the default
+     configuration file (default is `s:.bankerconfig'
+
+
+@EndNode
+
+@Node "THE MAIN WINDOW" "banker.guide/THE MAIN WINDOW"
+@Toc "Main"
+
+The main window
+***************
+
+   This is the window that allows you to choose among the several
+features of Banker. It has menus and buttons.
+
+
+ @{" Menus " Link "Menus"}       Using the menus
+ @{" Buttons " Link "Buttons"}     Using the buttons
+
+
+@EndNode
+
+@Node "Menus" "banker.guide/Menus"
+@Toc "The Main Window"
+
+Menus
+=====
+
+   The menus are the following
+
+  1. The File menu
+        * Open          Open a new file. Its name will be indicated in
+          the title bar of the main window. If there is already a file
+          present in memory and if it has been modified, Banker will
+          issue a warning telling you you're about to lose data. If
+          it's not your intention, cancel the Open order, save your
+          file and then you can Open safely.
+
+        * Save          Save current file to disk. If no name had been
+          given yet, a file requester appears.
+
+        * Save as          Save the current file under a name queried
+          through the file requester.
+
+        * Print          Print the current file through a file
+          requester (suggesting `PRT:' by default) using the format
+          specified in the *PrintFormat* variable (see
+          @{"The Configuration File" Link "The Configuration File"}).
+
+        * Export          Export the current database to a format
+          specified in the *ExportFormat* variable (see
+          @{"The Configuration File" Link "The Configuration File"}).
+
+        * Quit          Quit Banker. If there is already a file present
+          in memory and if it has been modified, Banker will issue a
+          warning telling you you're about to lose data. If it's not
+          your intention, cancel the Quit order, save your file and
+          then you can Quit safely.
+
+  2. The Preferences menu
+        * Save          Will allow you to save the current settings to
+          the configuration file (see @{"The Configuration File" Link "The Configuration File"}), mainly
+          the positions of all the windows. Next time Banker is
+          started, the windows will be automatically positioned at the
+          place where you last moved them.
+
+
+@EndNode
+
+@Node "Buttons" "banker.guide/Buttons"
+@Toc "The Main Window"
+
+Buttons
+=======
+
+   The buttons perform the following actions :
+
+   * New Entry    If you wish to add an entry to the current database,
+     select this button (see @{"The New Entry Window" Link "The New Entry Window"}).
+
+   * List Entries    Will take you to the List window in order to see
+     the contents of the current database, or to edit it (see
+     @{"The List Window" Link "The List Window"}).
+
+   * Automatic credit/debit    If you wish to add a new Automatic entry
+     (that is : an entry that will be entered repeatedly and
+     automatically in the database), select this button (see
+     @{"The Automatic Entry Window" Link "The Automatic Entry Window"}).
+
+   * Clear File    Will clear the current file, in order to start a new
+     one.
+
+
+@EndNode
+
+@Node "THE LIST WINDOW" "banker.guide/THE LIST WINDOW"
+@Toc "Main"
+
+The List window
+***************
+
+   This window gives you the full listing of your account until today.
+
+The list
+========
+
+   The appearance of what you see will depend on the variable
+*DisplayFormat* (see @{"The Configuration File" Link "The Configuration File"}). The only constant thing
+is the character displayed on the first column, which is one of :
+
+   * '+'      Indicate a line that was generated by an automatic entry
+     (see @{"The Automatic Entry window" Link "The Automatic Entry window"}).
+
+   * '*'      Indicate an entry that has not been validated by your
+     bank.
+
+   * ' '      When no character is present, this entry was validated by
+     the bank
+
+Validate/Edit/Delete
+====================
+
+   The cycle gadget at the bottom of the window can alternate between
+three states. Depending on its value, clicking on one of the displayed
+lines will have a different behavior :
+
+   * Validate  Validate this entry. The 'Validated total' gadget at the
+     bottom will be updated accordingly immediately.
+
+   * Edit      Edit this entry. If you click on a regular entry, you
+     will be taken to the window editing a new entry (see
+     @{"The New Entry Window" Link "The New Entry Window"}) but if this entry was generated by an
+     automatic entry, you are actually asking to edit the automatic
+     entry (see @{"The Automatic Entry Window" Link "The Automatic Entry Window"}).
+
+   * Delete    Delete this entry. A warning will appear so you can
+     confirm your action. If you select an automatic entry, you're
+     actually asking the automatic entry to be removed, and therefore
+     all the generated entries. Use this option with great care!
+
+The total
+=========
+
+   Down on the right are two figures that represent the state of your
+account.
+
+   * Validated    All the entries that were validated by your bank.
+     After you correctly updated these entries, the figure indicated
+     must match the one your bank is giving you.
+
+   * Total        This is the actual total of what your account is (that
+     is, the validated total plus the new entries that were not
+     validated yet)
+
+
+@EndNode
+
+@Node "THE NEW ENTRY WINDOW" "banker.guide/THE NEW ENTRY WINDOW"
+@Toc "Main"
+
+The New Entry window
+********************
+
+   This window allows you to enter a new entry. Its use is rather
+straightforward. The only mandatory fields are "Date" and "Amount". You
+can fill in the other fields depending on the value of your format
+variables (see @{"The Configuration File" Link "The Configuration File"}).
+
+   To specify a debit in your account, enter a negative figure in the
+"Amount" gadget.
+
+
+@EndNode
+
+@Node "THE AUTOMATIC ENTRY WINDOW" "banker.guide/THE AUTOMATIC ENTRY WINDOW"
+@Toc "Main"
+
+The New Automatic Entry window
+******************************
+
+   This window allows you to enter a new automatic entry. Automatic
+entries are used when an amount is regularly credited (or debited) to
+your account. In this window, you can specify :
+
+   * The amount (may be negative to specify a debit)
+
+   * The delay between two entries
+
+   * The fields defining the Reason and the Imputation of the generated
+     entry. You're free not to fill these fields.
+
+     These automatic entries will generate entries that will be
+     signaled by a '+' in the List Window (see @{"The list window" Link "The list window"}).
+
+
+@EndNode
+
+@Node "THE CONFIGURATION FILE" "banker.guide/THE CONFIGURATION FILE"
+@Toc "Main"
+
+The configuration file
+**********************
+
+   Banker can be customized in a simple yet flexible way.
+
+
+ @{" Output formats " Link "Output formats"}      How to change the representation of what you see and get
+ @{" Date formats " Link "Date formats"}        To choose between several representations of dates
+ @{" Windows open " Link "Windows open"}        Indicate which windows you want to be open on start
+ @{" Autosave " Link "Autosave"}            Set the autosave interval
+
+
+@EndNode
+
+@Node "Output formats" "banker.guide/Output formats"
+@Toc "The configuration file"
+
+Output formats
+**************
+
+   There are three output formats controlled by three variables :
+   * listformat    Control the entries displayed in the List Window
+     (see @{"THE LIST WINDOW" Link "THE LIST WINDOW"})
+
+   * printformat   Control how the entries are printed (see @{"Menus" Link "Menus"})
+
+   * exportformat  Control how the entries are exported(see @{"Menus" Link "Menus"})
+
+     These three variables must respect a certain syntax. Each string
+     that you wish to include as is must be enclosed in quotation marks
+     ("). Any words not enclosed in quotation marks must be one of the
+     following :
+
+        * Date, Imputation, Reason, Amount, Transaction
+
+        * Any valid escape sequence from MUI's font engine
+
+     In order to have the list of these sequences, read the file
+     font_engine.doc in the Docs/ directory.
+
+     Example :
+
+     displayformat "<ESC>b" date "<ESC>n | $" amount " | " reason
+
+     will display the date in bold, followed by a vertical bar, then a
+     dollar, the amount, another bar and the reason field.
+
+     NOTE: <ESC> must be replaced with a *real* ESC character
+
+
+@EndNode
+
+@Node "Date formats" "banker.guide/Date formats"
+@Toc "The configuration file"
+
+Date formats
+************
+
+   You can ask Banker to display dates in many different formats.
+Depending on your Workbench version, not all the formats will be
+available.
+
+   * Workbench 2.0
+
+   * Workbench 2.1 and 3.0
+
+
+@EndNode
+
+@Node "Windows open" "banker.guide/Windows open"
+@Toc "The configuration file"
+
+Windows open
+************
+
+   Here you specify which windows you want to find open when you start
+Banker. For example :
+
+   mainwindow 1
+automatic 1
+list 1
+getEntry 0
+will display all the windows except the one where you enter a new entry.
+
+
+@EndNode
+
+@Node "Autosave" "banker.guide/Autosave"
+@Toc "The configuration file"
+
+Autosave
+********
+
+   Set the autosave interval in minutes. For example :
+
+   autosave 2
+
+@EndNode
+
+@Node "NOTES FOR 2.1 USERS" "banker.guide/NOTES FOR 2.1 USERS"
+@Toc "Main"
+
+Notes for 2.1 users
+*******************
+
+
+@EndNode
+
+@Node "FUTURE ENHANCEMENTS" "banker.guide/FUTURE ENHANCEMENTS"
+@Toc "Main"
+
+Future enhancements
+*******************
+
+Whereas primarily written for my own use, Banker quickly appeared as a
+program that might beneficiate from an intensive work and become a very
+powerful tool. Depending on the level of interest of this first version,
+next versions of Banker will incorporate the following features :
+
+
+@EndNode
+
+@Node "INDEX" "banker.guide/INDEX"
+@Toc "Main"
+
+Index
+*****
+
+
+
+ @{" Arguments " Link "LAUNCHING BANKER"}                            LAUNCHING BANKER
+ @{" Changing the configuration file name " Link "FROM WORKBENCH"} FROM WORKBENCH
+ @{" Changing the configuration file name " Link "FROM CLI"} FROM CLI
+ @{" Export " Link "Menus"}                               Menus
+ @{" File menu " Link "Menus"}                            Menus
+ @{" gadtools " Link "OVERVIEW"}                             OVERVIEW
+ @{" gadtools " Link "THE GRAPHIC INTERFACE"}                             THE GRAPHIC INTERFACE
+ @{" Installation " Link "INSTALLING BANKER"}                         INSTALLING BANKER
+ @{" Introduction " Link "OVERVIEW"}                         OVERVIEW
+ @{" Invisible shortcuts " Link "THE GRAPHIC INTERFACE"}                  THE GRAPHIC INTERFACE
+ @{" Launching from CLI " Link "LAUNCHING BANKER"}                   LAUNCHING BANKER
+ @{" Launching from Workbench " Link "LAUNCHING BANKER"}             LAUNCHING BANKER
+ @{" locale " Link "OVERVIEW"}                               OVERVIEW
+ @{" Open " Link "Menus"}                                 Menus
+ @{" Overview " Link "OVERVIEW"}                             OVERVIEW
+ @{" Print " Link "Menus"}                                Menus
+ @{" Quit " Link "Menus"}                                 Menus
+ @{" Save " Link "Menus"}                                 Menus
+ @{" Save as " Link "Menus"}                              Menus
+ @{" Shortcuts " Link "THE GRAPHIC INTERFACE"}                            THE GRAPHIC INTERFACE
+ @{" Specifying an initial file " Link "FROM CLI"}           FROM CLI
+ @{" Specifying the language " Link "FROM CLI"}              FROM CLI
+ @{" String gadgets " Link "THE GRAPHIC INTERFACE"}                       THE GRAPHIC INTERFACE
+ @{" TAB " Link "THE GRAPHIC INTERFACE"}                                  THE GRAPHIC INTERFACE
+ @{" Tooltypes " Link "LAUNCHING BANKER"}                            LAUNCHING BANKER
+
+@EndNode
+

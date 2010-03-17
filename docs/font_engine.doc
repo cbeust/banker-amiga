@@ -1,0 +1,52 @@
+NOTE: THIS FILE IS AN EXCERPT FROM THE FILE MUI_text.doc, in the MUI
+developer's distribution.
+
+----------------------------------------------------------------------
+
+
+	Whenever MUI prints strings, they may contain some special
+	character sequences defining format, color and style of the text.
+
+	'\n'	 Start a new line. With this character you can e.g. create
+		 multi line buttons.
+
+	ESC -    Disable text engine, following chars will be printed
+	         without further parsing.
+
+	ESC u    Set the soft style to underline.
+
+	ESC b    Set the soft style to bold.
+
+	ESC i    Set the soft style to italic.
+
+	ESC n    Set the soft style back to normal.
+
+	ESC <n>  Use pen number n (0..9) as front pen. n must be a valid
+		 DrawInfo pen as specified in "intuition/screens.h".
+
+	ESC c    Center current (and following) line(s).
+		 This sequence is only valid at the beginning of a
+		 string or after a newline character.
+
+	ESC r    Right justify current (and following) line(s).
+		 This sequence is only valid at the beginning of a
+		 string or after a newline character.
+
+	ESC l    Left justify current (and following) line(s).
+		 This sequence is only valid at the beginning of a
+		 string or after a newline character.
+
+	ESC I[s] Draw MUI image with specification <s>.
+
+	Note:	 These rules apply to all MUI strings, not only to
+		 a text objects contents. You can e.g. format the
+	         columns of a listview or include images in a cycle
+	         gadgets entries.
+
+    EXAMPLE
+	...
+	MUIA_Text_Contents, "\33c\33bMUI\33n\nis magic"
+	...
+
+	would look like     |    MUI   |  <-- bold
+	                    | is magic |  <-- normal

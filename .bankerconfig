@@ -1,0 +1,13 @@
+mainwindow 1
+automatic 1
+list 1
+getEntry 1
+
+autosave 2
+
+dateFormat %d-%m-%y
+defaultDate CDN
+
+displayFormat "b" date "n | $" amount " | " transaction
+printFormat date amount transaction "F"
+exportFormat date amount transaction "F"

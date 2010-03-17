@@ -1,0 +1,62 @@
+D=DEBUG=FULL
+CFLAGS=DEFINE=cedric
+GST=GST=Banker.gst
+
+LINKERFLAGS=
+HEADERS=common.h locale_strings.h
+CC=sc
+LINKER=slink
+LIBRARIES=lib:scm.lib lib:sc.lib lib:amiga.lib
+OBJECTS=database.o gui.o common.o  main.o getentry.o list.o io.o common2.o automatic.o menu.o
+
+banker: banker.gst banker2
+
+banker2: $(OBJECTS)
+	$(LINKER) $(LINKERFLAGS)\
+             FROM LIB:c.o $(OBJECTS) \
+             LIB $(LIBRARIES)\
+             TO banker
+
+banker-no-symbols: $(OBJECTS)
+	$(LINKER) $(LINKERFLAGS)\
+             FROM LIB:c.o $(OBJECTS) \
+             LIB $(LIBRARIES)\
+             NODEBUG\
+             TO banker
+
+common.o:	common.c common.h
+	$(CC) DEFINE=cedric $(D) $(CFLAGS) common.c
+
+banker.gst: common.h
+	$(CC) $(CFLAGS) MGST Banker.gst main.c
+	delete main.o
+
+.c.o:
+	$(CC) $(CFLAGS) $(GST) $(D) $<
+
+
+all: cat banker.gst banker
+
+cat:
+   catcomp catalogs/banker.cd catalogs/french.ct\
+           CATALOG catalogs/français/banker.catalog\
+           CFILE locale_strings.h
+   catcomp catalogs/banker.cd catalogs/italiano.ct\
+           CATALOG catalogs/italiano/banker.catalog
+   catcomp catalogs/banker.cd catalogs/deutsch.ct\
+           CATALOG catalogs/deutsch/banker.catalog
+   catcomp catalogs/banker.cd catalogs/nederlands.ct\
+           CATALOG catalogs/nederlands/banker.catalog
+   catcomp catalogs/banker.cd catalogs/dansk.ct\
+           CATALOG catalogs/dansk/banker.catalog
+
+rebuild:
+	cd catalogs
+	catcomp banker.cd ctfile french.ct
+
+
+clean:
+	delete $(OBJECTS)
+
+
+

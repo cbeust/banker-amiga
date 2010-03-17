@@ -1,0 +1,272 @@
+#ifndef LOCALE_STRINGS_H
+#define LOCALE_STRINGS_H
+
+
+/****************************************************************************/
+
+
+/* This file was created automatically by CatComp.
+ * Do NOT edit by hand!
+ */
+
+
+#ifndef EXEC_TYPES_H
+#include <exec/types.h>
+#endif
+
+
+/****************************************************************************/
+
+
+#define MSG_BLANK 0
+#define MSG_BLANK_STR ""
+
+#define MSG_MENU_FILE 1
+#define MSG_MENU_FILE_STR "File"
+
+#define MSG_MENU_FILE_OPEN 2
+#define MSG_MENU_FILE_OPEN_STR "Open..."
+
+#define MSG_MENU_FILE_SAVE 3
+#define MSG_MENU_FILE_SAVE_STR "Save"
+
+#define MSG_MENU_FILE_SAVE_AS 4
+#define MSG_MENU_FILE_SAVE_AS_STR "Save as..."
+
+#define MSG_MENU_FILE_QUIT 5
+#define MSG_MENU_FILE_QUIT_STR "Quit"
+
+#define MSG_MENU_FILE_PRINT 6
+#define MSG_MENU_FILE_PRINT_STR "Print..."
+
+#define MSG_MENU_FILE_EXPORT 7
+#define MSG_MENU_FILE_EXPORT_STR "Export..."
+
+#define MSG_MENU_PREFS_REREAD 8
+#define MSG_MENU_PREFS_REREAD_STR "Reread"
+
+#define MSG_MENU_PREFERENCES 9
+#define MSG_MENU_PREFERENCES_STR "Preferences"
+
+#define MSG_WINDOW_NEW_ENTRY 10
+#define MSG_WINDOW_NEW_ENTRY_STR "New Entry"
+
+#define MSG_GADGET_TRANSACTION 11
+#define MSG_GADGET_TRANSACTION_STR "Transaction@"
+
+#define MSG_GADGET_MONTANT 12
+#define MSG_GADGET_MONTANT_STR "Amount"
+
+#define MSG_GADGET_IMPUTATION 13
+#define MSG_GADGET_IMPUTATION_STR "Imputation@"
+
+#define MSG_GADGET_LIBELLE 14
+#define MSG_GADGET_LIBELLE_STR "Reason"
+
+#define MSG_GADGET_CHECKNUMBER 15
+#define MSG_GADGET_CHECKNUMBER_STR "Check number"
+
+#define MSG_CHECK 16
+#define MSG_CHECK_STR "Check"
+
+#define MSG_SCREEN_TITLE 17
+#define MSG_SCREEN_TITLE_STR "Banker, by Cédric BEUST"
+
+#define MSG_CREDITCARD 18
+#define MSG_CREDITCARD_STR "Credit card"
+
+#define MSG_OK 19
+#define MSG_OK_STR "_Ok"
+
+#define MSG_CANCEL 20
+#define MSG_CANCEL_STR "_Cancel"
+
+#define MSG_WINDOW_NEW_ENTRY_WITH__ 21
+#define MSG_WINDOW_NEW_ENTRY_WITH___STR "_New Entry"
+
+#define MSG_WINDOW_LIST_ENTRIES 22
+#define MSG_WINDOW_LIST_ENTRIES_STR "_List entries"
+
+#define MSG_WINDOW_CLEAR_FILE 23
+#define MSG_WINDOW_CLEAR_FILE_STR "_Clear file"
+
+#define MSG_WINDOW_MAIN_WINDOW 24
+#define MSG_WINDOW_MAIN_WINDOW_STR "Main window"
+
+#define MSG_EDIT 25
+#define MSG_EDIT_STR "Edit"
+
+#define MSG_ACCOUNT 26
+#define MSG_ACCOUNT_STR "Validate"
+
+#define MSG_OPEN_FILE 27
+#define MSG_OPEN_FILE_STR "Open File..."
+
+#define MSG_VALIDATED 28
+#define MSG_VALIDATED_STR "Validated: %6.2f"
+
+#define MSG_TOTAL 29
+#define MSG_TOTAL_STR "Total    : %6.2f"
+
+#define MSG_WINDOW_PERIODIC_ENTRY 30
+#define MSG_WINDOW_PERIODIC_ENTRY_STR "_Automatic credit/debit"
+
+#define MSG_GADGET_DATE 31
+#define MSG_GADGET_DATE_STR "Date (DD-MM-YY) "
+
+#define MSG_START_AT_DATE 32
+#define MSG_START_AT_DATE_STR "Start at date"
+
+#define MSG_END_AT_DATE 33
+#define MSG_END_AT_DATE_STR "End at date"
+
+#define MSG_DAYS 34
+#define MSG_DAYS_STR "Days"
+
+#define MSG_WEEKS 35
+#define MSG_WEEKS_STR "Weeks"
+
+#define MSG_MONTHS 36
+#define MSG_MONTHS_STR "Months"
+
+#define MSG_YEARS 37
+#define MSG_YEARS_STR "Years"
+
+#define MSG_WINDOW_AUTOMATIC_ENTRIES 38
+#define MSG_WINDOW_AUTOMATIC_ENTRIES_STR "Automatic entries"
+
+#define MSG_NEW_FULL 39
+#define MSG_NEW_FULL_STR "_New"
+
+#define MSG_REPLACE_FULL 40
+#define MSG_REPLACE_FULL_STR "_Replace"
+
+#define MSG_ADD_FULL 41
+#define MSG_ADD_FULL_STR "_Add"
+
+#define MSG_DELETE_FULL 42
+#define MSG_DELETE_FULL_STR "_Delete"
+
+#define MSG_REPEAT_EACH 43
+#define MSG_REPEAT_EACH_STR "Repeat each..."
+
+#define MSG_DELETE 44
+#define MSG_DELETE_STR "Delete"
+
+#define MSG_TITLE_DELETION 45
+#define MSG_TITLE_DELETION_STR "Confirm deletion"
+
+#define MSG_BODY_DELETION_AUTO 46
+#define MSG_BODY_DELETION_AUTO_STR "This is an automatic entry!\nAll the generated entries will\nbe destroyed too.\nSure?"
+
+#define MSG_BODY_DELETION_ENTRY 47
+#define MSG_BODY_DELETION_ENTRY_STR "Delete this entry?\nSure?"
+
+#define MSG_YES_OR_NO 48
+#define MSG_YES_OR_NO_STR "Yes|No"
+
+#define MSG_WINDOW_CRASH_TITLE 49
+#define MSG_WINDOW_CRASH_TITLE_STR "Crash file!!!"
+
+#define MSG_WINDOW_CRASH_BODY 50
+#define MSG_WINDOW_CRASH_BODY_STR "A crash file exists!!!\nDo you want to open it instead?"
+
+#define MSG_BETA_VERSION 51
+#define MSG_BETA_VERSION_STR "Warning! You are using a beta version of 2.1!!! Not all functionalities\nwill be present."
+
+#define MSG_NO_FILE_LOADED 52
+#define MSG_NO_FILE_LOADED_STR "No file loaded"
+
+#define MSG_TITLE_FILE_MODIFIED 53
+#define MSG_TITLE_FILE_MODIFIED_STR "File modified"
+
+#define MSG_BODY_FILE_MODIFIED 54
+#define MSG_BODY_FILE_MODIFIED_STR "This file has been modified!\nAre you sure you want to open another one?"
+
+#define MSG_FILE_MODIFIED_QUIT 55
+#define MSG_FILE_MODIFIED_QUIT_STR "This file has been modified!\nAre you sure you want to quit?"
+
+#define MSG_CLEAR 56
+#define MSG_CLEAR_STR "Clear"
+
+
+/****************************************************************************/
+
+
+#ifdef STRINGARRAY
+
+struct AppString
+{
+    LONG   as_ID;
+    STRPTR as_Str;
+};
+
+struct AppString AppStrings[] =
+{
+    {MSG_BLANK,MSG_BLANK_STR},
+    {MSG_MENU_FILE,MSG_MENU_FILE_STR},
+    {MSG_MENU_FILE_OPEN,MSG_MENU_FILE_OPEN_STR},
+    {MSG_MENU_FILE_SAVE,MSG_MENU_FILE_SAVE_STR},
+    {MSG_MENU_FILE_SAVE_AS,MSG_MENU_FILE_SAVE_AS_STR},
+    {MSG_MENU_FILE_QUIT,MSG_MENU_FILE_QUIT_STR},
+    {MSG_MENU_FILE_PRINT,MSG_MENU_FILE_PRINT_STR},
+    {MSG_MENU_FILE_EXPORT,MSG_MENU_FILE_EXPORT_STR},
+    {MSG_MENU_PREFS_REREAD,MSG_MENU_PREFS_REREAD_STR},
+    {MSG_MENU_PREFERENCES,MSG_MENU_PREFERENCES_STR},
+    {MSG_WINDOW_NEW_ENTRY,MSG_WINDOW_NEW_ENTRY_STR},
+    {MSG_GADGET_TRANSACTION,MSG_GADGET_TRANSACTION_STR},
+    {MSG_GADGET_MONTANT,MSG_GADGET_MONTANT_STR},
+    {MSG_GADGET_IMPUTATION,MSG_GADGET_IMPUTATION_STR},
+    {MSG_GADGET_LIBELLE,MSG_GADGET_LIBELLE_STR},
+    {MSG_GADGET_CHECKNUMBER,MSG_GADGET_CHECKNUMBER_STR},
+    {MSG_CHECK,MSG_CHECK_STR},
+    {MSG_SCREEN_TITLE,MSG_SCREEN_TITLE_STR},
+    {MSG_CREDITCARD,MSG_CREDITCARD_STR},
+    {MSG_OK,MSG_OK_STR},
+    {MSG_CANCEL,MSG_CANCEL_STR},
+    {MSG_WINDOW_NEW_ENTRY_WITH__,MSG_WINDOW_NEW_ENTRY_WITH___STR},
+    {MSG_WINDOW_LIST_ENTRIES,MSG_WINDOW_LIST_ENTRIES_STR},
+    {MSG_WINDOW_CLEAR_FILE,MSG_WINDOW_CLEAR_FILE_STR},
+    {MSG_WINDOW_MAIN_WINDOW,MSG_WINDOW_MAIN_WINDOW_STR},
+    {MSG_EDIT,MSG_EDIT_STR},
+    {MSG_ACCOUNT,MSG_ACCOUNT_STR},
+    {MSG_OPEN_FILE,MSG_OPEN_FILE_STR},
+    {MSG_VALIDATED,MSG_VALIDATED_STR},
+    {MSG_TOTAL,MSG_TOTAL_STR},
+    {MSG_WINDOW_PERIODIC_ENTRY,MSG_WINDOW_PERIODIC_ENTRY_STR},
+    {MSG_GADGET_DATE,MSG_GADGET_DATE_STR},
+    {MSG_START_AT_DATE,MSG_START_AT_DATE_STR},
+    {MSG_END_AT_DATE,MSG_END_AT_DATE_STR},
+    {MSG_DAYS,MSG_DAYS_STR},
+    {MSG_WEEKS,MSG_WEEKS_STR},
+    {MSG_MONTHS,MSG_MONTHS_STR},
+    {MSG_YEARS,MSG_YEARS_STR},
+    {MSG_WINDOW_AUTOMATIC_ENTRIES,MSG_WINDOW_AUTOMATIC_ENTRIES_STR},
+    {MSG_NEW_FULL,MSG_NEW_FULL_STR},
+    {MSG_REPLACE_FULL,MSG_REPLACE_FULL_STR},
+    {MSG_ADD_FULL,MSG_ADD_FULL_STR},
+    {MSG_DELETE_FULL,MSG_DELETE_FULL_STR},
+    {MSG_REPEAT_EACH,MSG_REPEAT_EACH_STR},
+    {MSG_DELETE,MSG_DELETE_STR},
+    {MSG_TITLE_DELETION,MSG_TITLE_DELETION_STR},
+    {MSG_BODY_DELETION_AUTO,MSG_BODY_DELETION_AUTO_STR},
+    {MSG_BODY_DELETION_ENTRY,MSG_BODY_DELETION_ENTRY_STR},
+    {MSG_YES_OR_NO,MSG_YES_OR_NO_STR},
+    {MSG_WINDOW_CRASH_TITLE,MSG_WINDOW_CRASH_TITLE_STR},
+    {MSG_WINDOW_CRASH_BODY,MSG_WINDOW_CRASH_BODY_STR},
+    {MSG_BETA_VERSION,MSG_BETA_VERSION_STR},
+    {MSG_NO_FILE_LOADED,MSG_NO_FILE_LOADED_STR},
+    {MSG_TITLE_FILE_MODIFIED,MSG_TITLE_FILE_MODIFIED_STR},
+    {MSG_BODY_FILE_MODIFIED,MSG_BODY_FILE_MODIFIED_STR},
+    {MSG_FILE_MODIFIED_QUIT,MSG_FILE_MODIFIED_QUIT_STR},
+    {MSG_CLEAR,MSG_CLEAR_STR},
+};
+
+
+#endif /* STRINGARRAY */
+
+
+/****************************************************************************/
+
+
+#endif /* LOCALE_STRINGS_H */

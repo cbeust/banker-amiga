@@ -1,0 +1,55 @@
+- --> done
+* --> to do
+
+   Features
+   --------
+
+* Separate preferences editor
+- Use of a backdrop window so that menus are always active
+* Several filenames to save, print, export
+- Add a sort function
+- Indicate the current file
+- Provide a CLEAR
+- Format of the options file
+- Save window configuration
+- Avoid garbage when editing an automatic entry for the first time
+* Double-click
+- Automatic backup
+- Workbench support
+- Locale support for dates
+* Export WKS format
+* Intermediate sum
+* Delayed debit
+* Arexx port
+
+
+   Bugs
+   ----
+
+- Make OK/Cancel mean what they are supposed to
+- Better handle GetMsg()'s
+- Menus
+* Configuration save
+- Correct totals
+* Signal the %D bug in the documentation
+* Validate changes the order of the list
+* Adjust the sizes of the gadgets for other locales
+
+
+   Improvements
+   ------------
+
+- Better sort algorithm!!!
+- Use Exec functions when possible (NewList, AddTail, etc...)
+- Save buildDataBase() whenever possible
+- Free the previous minList before allocating a new one
+- Divide handling code by two (group GADGETUP and VANILLAKEY)
+* Provide resizable windows
+- Position the listview gadget at the end
+- Automatic : 'NEW' must insert the date
+* Getentry : better design
+* Better error handling
+* Display the basename of the file in the title window
+* Indicate the overwite mode in the windows in the documentation
+* Use AllocRemember() and strdup() whenever possible
+* Update the documentation regarding the date format and notices to 2.0 users

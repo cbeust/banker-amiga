@@ -1,0 +1,40 @@
+
+Banker is a program designed to help you keep an accurate track of your bank accounts.
+
+
+Banker's main features include :
+
+  .  Entries can be entered as you choose it.  'Amount' and 'Dates' are
+     the only fields that are obligatory.  You are free to enter the
+     other ones if you wish
+
+  .  Handler "automatic" entries (i.e. entries that occur regularly)
+
+  .  Three output formats are available :  Display Format, Print Format
+     and Export  Format (*note Output Formats::.).  You might want to
+     display on your screen only a limited number of information, but
+     may want to print the database fully (on a 132 columns printer for
+     example) and be able to save your file under another form
+     understandable by another program...
+
+  .  Full 2.0 graphic user interface.  I put a strong effort in this
+     because I feel deeply that a pleasant graphic interface makes the
+     difference between a program you use daily and one that is very
+     powerful but that you dare not even launch... gadtools is
+     brilliant, not perfect but hey! it's all we've got, so let's stick
+     to it!  Banker is fully localized too (i.e.  can speak several
+     languages, *note Installing Banker::.).
+
+  .  Maximum use of the 2.0 OS features : IffParse(), ReadArgs(),
+     amigaguide.library, etc...
+
+  .  User-definable autosave. No more data wasted because of an
+     unexpected power loss : Banker will save your file automatically.
+
+  .  A lot more...
+
+For more information, read the documentation in the Docs/ directory.
+
+
+Cédric BEUST
+beust@sa.inria.fr
